@@ -155,6 +155,12 @@ namespace Remainer.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    var db = new ApplicationDbContext();
+                    var currentCount = (20 + db.WaitAccounts.Count()).ToString().PadLeft(3, '0');
+                    var waitAccount = new Wait{ CurrentCount = currentCount , ApplicationUserId = user.Id };
+                    db.WaitAccounts.Add(waitAccount);
+                    db.SaveChanges();
+
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771

@@ -2,8 +2,9 @@
 var map;
 var infowindow;
 
+
 function initMap() {
-    var pyrmont = { lat: -33.867, lng: 151.195 };
+    var pyrmont = { lat: 38.255532, lng: -85.755323 };
 
     map = new google.maps.Map(document.getElementById('map'), {
         center: pyrmont,
@@ -16,7 +17,7 @@ function initMap() {
     service.nearbySearch({
         location: pyrmont,
         radius: 500,
-        types: ['store']
+        types: ['restaurant']
     }, callback);
 }
 
@@ -32,8 +33,10 @@ function createMarker(place) {
     var placeLoc = place.geometry.location;
     var marker = new google.maps.Marker({
         map: map,
-        position: place.geometry.location
+        position: place.geometry.location,
+     
     });
+  
 
     google.maps.event.addListener(marker, 'click', function () {
         infowindow.setContent(place.name);

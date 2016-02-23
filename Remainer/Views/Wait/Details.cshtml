@@ -1,0 +1,23 @@
+﻿@model Remainer.Models.Wait
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Wait</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CurrentCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CurrentCount)
+        </dd>
+
+    </dl>
+</div>
+

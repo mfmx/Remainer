@@ -80,3 +80,5 @@ C:\Users\maria.xavier\Desktop\Code Louisville C# .NET\Remainer\Remainer\bin\Micr
 C:\Users\maria.xavier\Desktop\Code Louisville C# .NET\Remainer\Remainer\obj\Debug\Remainer.csprojResolveAssemblyReference.cache
 C:\Users\maria.xavier\Desktop\Code Louisville C# .NET\Remainer\Remainer\obj\Debug\Remainer.dll
 C:\Users\maria.xavier\Desktop\Code Louisville C# .NET\Remainer\Remainer\obj\Debug\Remainer.pdb
+C:\Users\maria.xavier\Desktop\Code Louisville C# .NET\Remainer\Remainer\obj\Debug\Remainer.Migrations.AccountNumberChange.resources
+C:\Users\maria.xavier\Desktop\Code Louisville C# .NET\Remainer\Remainer\obj\Debug\Remainer.csproj.GenerateResource.Cache

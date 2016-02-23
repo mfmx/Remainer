@@ -23,11 +23,16 @@ namespace Remainer.Models
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
+            //to stop migration 
+           // Database.SetInitializer<ApplicationDbContext>(null);
+
         }
 
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
+
+        public DbSet<Wait> WaitAccounts { get; set; }
     }
 }

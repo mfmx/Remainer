@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Remainer.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +9,11 @@ namespace Remainer.Controllers
 {
     public class HomeController : Controller
     {
+        RestaurantLocationContext _db = new RestaurantLocationContext();
         public ActionResult Index()
         {
-            return View();
+            var model = _db.RestaurantLocations.ToList();
+            return View(model);
         }
 
         public ActionResult About()
@@ -25,6 +28,14 @@ namespace Remainer.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+        protected override void Dispose(bool disposing)
+        {
+            if(_db != null)
+            {
+                _db.Dispose();
+            }
+            base.Dispose(disposing);
         }
     }
 }
